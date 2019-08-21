@@ -2,7 +2,7 @@ FROM openjdk:8-alpine as build
 
 WORKDIR /opt
 COPY . .
-RUN ./gradlew clean build
+RUN ./gradlew clean assemble
 
 FROM openjdk:8-alpine as release
 WORKDIR /opt
