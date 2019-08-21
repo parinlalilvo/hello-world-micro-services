@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: helloWorld
+  datasource:
+    hikari:
+      connection-timeout: ${DATASOURCE_CONNECTION_TIMEOUT:60000}
+      maximum-pool-size: ${DATASOURCE_MAX_POOL:5}
+    password: ${DATASOURCE_PASSWORD:}
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/hello}
+    username: ${DATASOURCE_USERNAME:postgres}
+  jpa:
+    properties.hibernate.jdbc.lob.non_contextual_creation: true
+    hibernate.ddl-auto: none
+    show-sql: true
+server:
+  port: 6969
