@@ -1,6 +1,5 @@
 package com.aycap.helloworld.controller
 
-import com.aycap.helloworld.entity.Hello
 import com.aycap.helloworld.repository.HelloRepository
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
