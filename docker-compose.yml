@@ -8,9 +8,14 @@ services:
       - postgres_db
     environment:
       - DATASOURCE_URL=jdbc:postgresql://postgres_db:5432/hello
+      - ZIPKIN_URI=http://zipkin:9411
   postgres_db:
     image: postgres:11
     ports:
       - 5432:5432
     volumes: 
       - $PWD/init.sql:/docker-entrypoint-initdb.d/init.sql
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+    - 9411:9411

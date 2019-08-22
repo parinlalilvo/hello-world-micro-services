@@ -1,7 +1,7 @@
 spring:
   application:
     name: helloWorld
-  zipkin.baseUrl: http://localhost:9411
+  zipkin.baseUrl: ${ZIPKIN_URI:http://localhost:9411}
   sleuth.sampler.probability: 1.0
   datasource:
     hikari:
