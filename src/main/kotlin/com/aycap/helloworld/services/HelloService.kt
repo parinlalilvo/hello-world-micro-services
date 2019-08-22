@@ -10,8 +10,15 @@ class HelloService {
     @Autowired
     lateinit var helloRepository: HelloRepository
 
-    fun getMessageById(id: Int): Hello {
-        val optionalMessage = helloRepository.findById(1)
-        return optionalMessage.get()
+    fun findAll(): MutableIterable<Hello> {
+        return helloRepository.findAll()
+    }
+
+    fun findById(id: Int): Hello {
+        return helloRepository.findById(id.toLong()).get()
+    }
+
+    fun findByName(name: String): Hello {
+        return helloRepository.findByName(name)
     }
 }
