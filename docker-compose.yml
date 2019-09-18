@@ -13,9 +13,9 @@ services:
     image: postgres:11
     ports:
       - 5432:5432
-    volumes: 
+    volumes:
       - $PWD/init.sql:/docker-entrypoint-initdb.d/init.sql
   zipkin:
     image: openzipkin/zipkin
     ports:
-    - 9411:9411
+      - 9411:9411
